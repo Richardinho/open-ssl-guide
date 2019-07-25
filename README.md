@@ -234,7 +234,7 @@ There is a tutorial by [quovadis global](https://support.quovadisglobal.com/kb/a
 
 #### Syntax
 ```
-  oid_file: <file-path>
+  oid_file = <file-path>
 ```
 
 ---
@@ -247,43 +247,39 @@ points to section in this file with additional object identifiers
 
 #### Syntax
 ```
-  oid_section: <section-name>
+  oid_section = <section-name>
 ```
 
 ---
 
 ### RANDFILE 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
-xxxxxx
+File from which to generate random numbers
+The BSD documents don't include this option.
 
 #### Syntax
 ```
-  xxxxx
+  RANDFILE = <file-path>
 ```
 
-#### Examples
-```
-  xxxxx
-
-```
 ---
 
 ### default_days 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  -days
 
-xxxxxx
+Number of days to certify a certificate for
 
 #### Syntax
 ```
-  xxxxx
+  default_days = <integer>
 ```
 
 #### Examples
 ```
-  xxxxx
+  default_days = 365
 ```
 ---
 
