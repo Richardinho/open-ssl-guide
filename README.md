@@ -226,7 +226,7 @@ If a field is not specified, it is silently deleted unless `-preserveDN` is set.
 
 ### oid_file
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
 File containing additional object identifiers
 What an object identifier is and what it's for, is not so clear to me.
@@ -241,7 +241,7 @@ There is a tutorial by [quovadis global](https://support.quovadisglobal.com/kb/a
 
 ### oid_section
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
 points to section in this file with additional object identifiers
 
