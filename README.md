@@ -23,21 +23,21 @@ When would a client need a certificate?
 How is this installed?
 How to create/manage serial numbers?
 
-### mandatory options for default_CA section
-* new_certs_dir
-* database
-* certificate
-* private_key
-* default_md
-* serial
-* policy
 
-### non-mandatory options for default_CA section
-*
-*
-*
+```
+# configuration for when `ca` command uses this file to sign certificates
 
+[ ca ]
 
+# The only property that should be in this section. It points to the section containing the default `ca` config.
+# command line option: -name
+default_ca = CA_default
+
+# the config section for ca. Why this isn't just in the ca section above is a mystery!
+[ CA_default ]
+  //  options
+
+```
 
 ## Options
 ### new_certs_dir
@@ -168,33 +168,12 @@ Defines the policy of the CA. That is, which fields in the CSR are acceptable
 
 #### Examples
 ```
-  policy         = policy_any
+  policy = policy_any
 ```
 
 
 
-```
-# configuration for when `ca` command uses this file to sign certificates
 
-[ ca ]
-
-# The only property that should be in this section. It points to the section containing the default `ca` config.
-# command line option: -name
-default_ca = CA_default
-
-# the config section for ca. Why this isn't just in the ca section above is a mystery!
-[ CA_default ]
-  //  options
-
-```
-
-
-
-# NON-MANDATORY
-
-```
-
-//  template
 
 
 ### xxxxxxx 
