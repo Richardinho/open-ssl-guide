@@ -32,6 +32,26 @@ default_md
 serial
 policy
 
+# Options
+## new_certs_dir
+Specifies the directory where new certificates will be placed.
+The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
+e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
+### Syntax
+```
+  new_certs_dir = <directory>
+```
+### Examples
+```
+  # dir is a variable defined elsewhere
+  new_certs_dir  = $dir/newcerts
+```
+*mandatory* : yes
+*command line option* : -outdir
+
+I don't know why the command line option is different!
+
+
 ## Config file
 *mandatory* means that the options must be in the config file or specified on the command line.
 
@@ -40,20 +60,24 @@ policy
 
 [ ca ]
 
-#  The only property that should be in this section. It points to the section containing the default `ca` config.
-#  override with -name <section> flag
+# The only property that should be in this section. It points to the section containing the default `ca` config.
+# command line option: -name
 default_ca = CA_default
 
 # the config section for ca. Why this isn't just in the ca section above is a mystery!
 [ CA_default ]
 
 # the config file format allows declaration of variables that can be used elswhere in the file (check exact scope)
+# check exactly how these work
 dir = <file-path>
+foo = bar
+database_file = $dir/database/index.txt
 
 # MANDATORY OPTIONS
 
 # Specifies the directory where new certificates will be placed.
 # command line option: -outdir (I don't know why the difference in names!)
+# The certificate will be written to this directory using a filename of the serial number with .pem attached
 new_certs_dir = <directory>
 
 # File to use as a database.
@@ -72,7 +96,10 @@ private_key = <file-path>
 # command line option: -md
 default_md = md5 | sha1 | mdc2
 
-serial
+# File containing next number (in hex) to use as a serial number. (Get exact format)
+serial = <file-path>
+# command line option: none
+
 policy
 
 # NON-MANDATORY
