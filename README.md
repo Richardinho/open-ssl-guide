@@ -67,7 +67,7 @@ copy_extensions = ...
 ## Options for CA_default section
 ### new_certs_dir
 * *mandatory* : yes
-* *command line option* : -outdir
+* *command line option* : `-outdir`
 
 Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
@@ -109,7 +109,7 @@ Curiously, there is not command line option for database.
 
 ### certificate 
 * *mandatory* : yes
-* *command line option* :  -cert
+* *command line option* :  `-cert`
 
 The CA certificate. Not (I think) where certificates are created (new_certs_dir).
 
@@ -127,7 +127,7 @@ The CA certificate. Not (I think) where certificates are created (new_certs_dir)
 
 ### private_key 
 * *mandatory* : yes
-* *command line option* : -keyfile
+* *command line option* : `-keyfile`
 
 File containing CA private key
 
@@ -147,7 +147,7 @@ File containing CA private key
 
 ### default_md 
 * *mandatory* : yes
-* *command line option* : -md
+* *command line option* : `-md`
 
 The message digest to use
 
@@ -185,7 +185,7 @@ Other sources suggest just putting a number (e.g. 01) into the serial file.
 
 ### policy 
 * *mandatory* : yes
-* *command line option* : -policy
+* *command line option* : `-policy`
 
 Defines the policy of the CA. That is, which DN fields provided in the CSR are acceptable.
 
@@ -269,7 +269,7 @@ The BSD documents don't include this option.
 
 ### default_days 
 * *mandatory* : no
-* *command line option* :  -days
+* *command line option* :  `-days`
 
 Number of days to certify a certificate for
 
@@ -286,7 +286,7 @@ Number of days to certify a certificate for
 
 ### default_startdate 
 * *mandatory* : no
-* *command line option* :  -startdate
+* *command line option* :  `-startdate`
 
 The date from which the certificate is effective. I wonder when you'd want to set this for a certificate authority as opposed to for each certificate?
 
@@ -305,7 +305,7 @@ The date from which the certificate is effective. I wonder when you'd want to se
 
 ### default_enddate
 * *mandatory* : no
-* *command line option* :  -enddate
+* *command line option* :  `-enddate`
 
 The date on which the certificate will expire. Although not explicitly mandatory, the OpenSSL docs suggest that this must be present.
 
@@ -318,7 +318,7 @@ The date on which the certificate will expire. Although not explicitly mandatory
 
 ### default_crl_hours 
 * *mandatory* : no (but see below) 
-* *command line option* : -crlhours
+* *command line option* : `-crlhours`
 
 The number of hours before the next CRL is due
 Either this or default_crl_days must be present for CRLs
@@ -329,7 +329,7 @@ I suspect the value will be an integer, but the documentation does not say.
 ---
 ### default_crl_days
 * *mandatory* :  no (but see below)
-* *command line option* : -crldays
+* *command line option* : `-crldays`
 
 The number of days before the next CRL is due
 Either this or default_crl_time must be present for CRLs
