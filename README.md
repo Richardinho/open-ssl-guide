@@ -24,22 +24,50 @@ How is this installed?
 How to create/manage serial numbers?
 
 
-```
 # configuration for when `ca` command uses this file to sign certificates
-
-[ ca ]
-
 # The only property that should be in this section. It points to the section containing the default `ca` config.
 # command line option: -name
+
+This is the basic structure of a config file. The ca section denotes options for when the `ca` command is invoked using this as a config.
+The only property this section should have is `default_ca` which points to the actual config section. Why it is done this way is unknown to me.
+
+```
+[ ca ]
+
 default_ca = CA_default
 
-# the config section for ca. Why this isn't just in the ca section above is a mystery!
 [ CA_default ]
-  //  options
+# mandatory 
+new_certs_dir = ...
+certificate = ...
+private_key = ...
+default_md = ...
+database = ...
+serial = ...
+policy = ...
+
+# non-mandatory
+oid_file = ...
+oid_section = ...
+RANDFILE = ...
+default_days = ...
+default_startdate = ...
+default_enddate = ...
+default_crl_hours default_crl_days = ...
+unique_subject = ...
+crlnumber = ...
+x509_extensions = ...
+crl_extensions = ...
+preserve = ...
+email_in_dn = ...
+msie_hack = ...
+name_opt = ...
+cert_opt = ...
+copy_extensions = ...
 
 ```
 
-## Options
+## Options for CA_default section
 ### new_certs_dir
 * *mandatory* : yes
 * *command line option* : -outdir
@@ -159,16 +187,40 @@ File containing next number (in hex) to use as a serial number. (Get exact forma
 * *mandatory* : yes
 * *command line option* : -policy
 
-Defines the policy of the CA. That is, which fields in the CSR are acceptable 
+Defines the policy of the CA. That is, which DN fields provided in the CSR are acceptable.
 
 #### Syntax
+The value of the policy property points to another section in the config file. This section contains 
+distinguished name fields which may or may not be present in the CSR for the certificate to be created.
 ```
-  policy: <policy>
+  policy: <policy-section>
+
+  [<policy-section>]
+
+  <dn-field> : match | supplied | optional
+
 ```
+
+The values of this property have the folowing meanings:
+* **match** : must be present and have same value 
+* **supplied** : must be present
+* **optional** :  may be present
+
+If a field is not specified, it is silently deleted unless `-preserveDN` is set.
 
 #### Examples
 ```
   policy = policy_any
+
+  # later in file
+
+  [ policy_any ]
+     countryName            = supplied
+     stateOrProvinceName    = optional
+     organizationName       = optional
+     organizationalUnitName = optional
+     commonName             = supplied
+     emailAddress           = optional
 ```
 
 
