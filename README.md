@@ -257,6 +257,7 @@ points to section in this file with additional object identifiers
 * *command line option* :  n/a
 
 File from which to generate random numbers
+I don't know the reason for the capitalisation.
 The BSD documents don't include this option.
 
 #### Syntax
