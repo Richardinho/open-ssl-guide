@@ -305,36 +305,38 @@ The date from which the certificate is effective. I wonder when you'd want to se
 
 ### default_enddate
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  -enddate
 
-xxxxxx
+The date on which the certificate will expire. Although not explicitly mandatory, the OpenSSL docs suggest that this must be present.
 
 #### Syntax
 ```
-  xxxxx
+  default_enddate = [YY]YYMMDDHHMMSSZ
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
-### default_crl_hours default_crl_days
-* *mandatory* : no
-* *command line option* :  xxxxx
+### default_crl_hours 
+* *mandatory* : no (but see below) 
+* *command line option* : -crlhours
 
-xxxxxx
+The number of hours before the next CRL is due
+Either this or default_crl_days must be present for CRLs
 
 #### Syntax
-```
-  xxxxx
-```
+I suspect the value will be an integer, but the documentation does not say.
 
-#### Examples
-```
-  xxxxx
-```
+---
+### default_crl_days
+* *mandatory* :  no (but see below)
+* *command line option* : -crldays
+
+The number of days before the next CRL is due
+Either this or default_crl_time must be present for CRLs
+
+#### Syntax
+I suspect the value will be an integer, but the documentation does not say.
+
 ---
 
 ### unique_subject 
