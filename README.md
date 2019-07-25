@@ -79,6 +79,104 @@ database = <file-path>
 ````
 Curiously, there is not command line option for database.
 
+---
+
+### certificate 
+* *mandatory* : yes
+* *command line option* :  -cert
+
+The CA certificate. Not (I think) where certificates are created (new_certs_dir).
+
+#### Syntax
+```
+  xxxxx
+  certificate = <file-path>
+```
+
+#### Examples
+```
+  #  dir is a variable defined elsewhere
+  certificate = $dir/cacert.pem
+```
+
+# File containing CA private key
+# command line option: -keyfile
+private_key = <file-path>
+
+---
+
+### private_key 
+* *mandatory* : yes
+* *command line option* : -keyfile
+
+File containing CA private key
+
+#### Syntax
+```
+  private_key = <file-path>
+```
+
+#### Examples
+
+```
+  # dir is a variable defined elsewhere
+  private_key = $dir/private/my-ca-key.pem
+```
+---
+
+### default_md 
+* *mandatory* : yes
+* *command line option* : -md
+
+The message digest to use
+
+#### Syntax
+```
+  default_md = md5 | sha1 | mdc2
+```
+
+#### Examples
+```
+  default_md     = md5
+```
+---
+
+### serial 
+* *mandatory* : yes
+* *command line option* :  n/a
+
+File containing next number (in hex) to use as a serial number. (Get exact format)
+
+#### Syntax
+```
+  serial = <file-path>
+```
+
+#### Examples
+```
+  # dir is a variable defined elsewhere
+  serial = $dir/serial
+```
+
+
+### policy 
+* *mandatory* : yes
+* *command line option* : -policy
+
+Defines the policy of the CA. That is, which fields in the CSR are acceptable 
+
+#### Syntax
+```
+  policy: <policy>
+```
+
+#### Examples
+```
+  policy         = policy_any
+```
+
+
+
 ```
 # configuration for when `ca` command uses this file to sign certificates
 
@@ -90,43 +188,31 @@ default_ca = CA_default
 
 # the config section for ca. Why this isn't just in the ca section above is a mystery!
 [ CA_default ]
-
-# the config file format allows declaration of variables that can be used elswhere in the file (check exact scope)
-# check exactly how these work
-dir = <file-path>
-foo = bar
-database_file = $dir/database/index.txt
-
-# MANDATORY OPTIONS
-
-# Specifies the directory where new certificates will be placed.
-# command line option: -outdir (I don't know why the difference in names!)
-# The certificate will be written to this directory using a filename of the serial number with .pem attached
-new_certs_dir = <directory>
-
-
-# The CA certificate. Not (I think) where certificates are created (new_certs_dir).
-# command line option: -cert
-certificate = <file-path>
-
-# File containing CA private key
-# command line option: -keyfile
-private_key = <file-path>
-
-# The message digest to use
-# command line option: -md
-default_md = md5 | sha1 | mdc2
-
-# File containing next number (in hex) to use as a serial number. (Get exact format)
-serial = <file-path>
-# command line option: none
-
-policy
-
-# NON-MANDATORY
+  //  options
 
 ```
 
 
 
+# NON-MANDATORY
 
+```
+
+//  template
+
+
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
