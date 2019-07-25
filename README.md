@@ -34,6 +34,8 @@ policy
 
 # Options
 ## new_certs_dir
+* *mandatory* : yes
+* *command line option* : -outdir
 Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
 e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
@@ -46,8 +48,6 @@ e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
   # dir is a variable defined elsewhere
   new_certs_dir  = $dir/newcerts
 ```
-*mandatory* : yes
-*command line option* : -outdir
 
 I don't know why the command line option is different!
 
