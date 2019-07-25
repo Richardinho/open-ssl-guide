@@ -36,13 +36,16 @@ policy
 ## new_certs_dir
 * *mandatory* : yes
 * *command line option* : -outdir
+
 Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
 e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
+
 ### Syntax
 ```
   new_certs_dir = <directory>
 ```
+
 ### Examples
 ```
   # dir is a variable defined elsewhere
