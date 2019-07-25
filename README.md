@@ -167,7 +167,7 @@ The message digest to use
 * *mandatory* : yes
 * *command line option* :  n/a
 
-File containing next number (in hex) to use as a serial number. (Get exact format)
+File containing the next number (in hex) to use as a serial number. (Get exact format)
 There seems to be some confusion over the creation of serial numbers. [this tutorial](https://www.phildev.net/ssl/creating_ca.html) suggests use of the `-create_serial` flag, but this doesn't seem to be documented.
 It is documented in the [openbsd documents](https://man.openbsd.org/openssl.1)
 Other sources suggest just putting a number (e.g. 01) into the serial file.
@@ -355,36 +355,28 @@ Whether or not certificates should have unique subjects.
 
 ### crlnumber 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
-xxxxxx
+File containing the next number (in hex) to use for CRL
+(Possible related to serial option?)
 
 #### Syntax
 ```
-  xxxxx
+  crlnumber = <file-path>
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### x509_extensions 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  `-extensions`
 
-xxxxxx
-
+According to documents: **The section of the configuration file containing certificate extensions to be added when a certificate is issued (defaults to x509_extensions unless the -extfile option is used). If no extension section is present then, a V1 certificate is created. If the extension section is present (even if it is empty), then a V3 certificate is created. See the x509v3_config(5) manual page for details of the extension section format.**
 #### Syntax
 ```
-  xxxxx
+  x509_extensions = <section-name>
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### crl_extensions 
