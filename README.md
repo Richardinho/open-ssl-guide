@@ -168,6 +168,7 @@ The message digest to use
 
 File containing next number (in hex) to use as a serial number. (Get exact format)
 There seems to be some confusion over the creation of serial numbers. [this tutorial](https://www.phildev.net/ssl/creating_ca.html) suggests use of the `-create_serial` flag, but this doesn't seem to be documented.
+It is documented in the [openbsd documents](https://man.openbsd.org/openssl.1)
 Other sources suggest just putting a number (e.g. 01) into the serial file.
 
 #### Syntax
@@ -223,6 +224,294 @@ If a field is not specified, it is silently deleted unless `-preserveDN` is set.
 ```
 
 
+### oid_file
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### oid_section
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### RANDFILE 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+
+```
+---
+
+### default_days 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### default_startdate 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### default_enddate
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### default_crl_hours default_crl_days
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### unique_subject 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### crlnumber 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### x509_extensions 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### crl_extensions 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### preserve 
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### email_in_dn
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### msie_hack
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### name_opt
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+### cert_opt
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+--- 
+
+### copy_extensions
+* *mandatory* : no
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
 
 
 
