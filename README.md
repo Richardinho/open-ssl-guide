@@ -158,7 +158,7 @@ The message digest to use
 
 #### Examples
 ```
-  default_md     = md5
+  default_md = md5
 ```
 ---
 
@@ -167,6 +167,8 @@ The message digest to use
 * *command line option* :  n/a
 
 File containing next number (in hex) to use as a serial number. (Get exact format)
+There seems to be some confusion over the creation of serial numbers. [this tutorial](https://www.phildev.net/ssl/creating_ca.html) suggests use of the `-create_serial` flag, but this doesn't seem to be documented.
+Other sources suggest just putting a number (e.g. 01) into the serial file.
 
 #### Syntax
 ```
