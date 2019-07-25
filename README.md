@@ -193,9 +193,9 @@ Defines the policy of the CA. That is, which DN fields provided in the CSR are a
 The value of the policy property points to another section in the config file. This section contains 
 distinguished name fields which may or may not be present in the CSR for the certificate to be created.
 ```
-  policy: <policy-section>
+  policy: <section-name>
 
-  [<policy-section>]
+  [<section-name>]
 
   <dn-field> : match | supplied | optional
 
@@ -228,34 +228,28 @@ If a field is not specified, it is silently deleted unless `-preserveDN` is set.
 * *mandatory* : no
 * *command line option* :  xxxxx
 
-xxxxxx
+File containing additional object identifiers
+What an object identifier is and what it's for, is not so clear to me.
+There is a tutorial by [quovadis global](https://support.quovadisglobal.com/kb/a471/inserting-custom-oids-into-openssl.aspx) which gives some explanation.
 
 #### Syntax
 ```
-  xxxxx
+  oid_file: <file-path>
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### oid_section
 * *mandatory* : no
 * *command line option* :  xxxxx
 
-xxxxxx
+points to section in this file with additional object identifiers
 
 #### Syntax
 ```
-  xxxxx
+  oid_section: <section-name>
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### RANDFILE 
