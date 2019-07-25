@@ -286,18 +286,20 @@ Number of days to certify a certificate for
 
 ### default_startdate 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  -startdate
 
-xxxxxx
+The date from which the certificate is effective. I wonder when you'd want to set this for a certificate authority as opposed to for each certificate?
+
 
 #### Syntax
 ```
-  xxxxx
+  default_startdate = [YY]YYMMDDHHMMSSZ
 ```
 
 #### Examples
 ```
-  xxxxx
+  # January 1st 2008 
+  default_startdate = 200801010000Z 
 ```
 ---
 
