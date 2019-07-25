@@ -371,7 +371,7 @@ File containing the next number (in hex) to use for CRL
 * *mandatory* : no
 * *command line option* :  `-extensions`
 
-According to documents: **The section of the configuration file containing certificate extensions to be added when a certificate is issued (defaults to x509_extensions unless the -extfile option is used). If no extension section is present then, a V1 certificate is created. If the extension section is present (even if it is empty), then a V3 certificate is created. See the x509v3_config(5) manual page for details of the extension section format.**
+According to documents: *The section of the configuration file containing certificate extensions to be added when a certificate is issued (defaults to x509_extensions unless the -extfile option is used). If no extension section is present then, a V1 certificate is created. If the extension section is present (even if it is empty), then a V3 certificate is created. See the x509v3_config(5) manual page for details of the extension section format.*
 #### Syntax
 ```
   x509_extensions = <section-name>
