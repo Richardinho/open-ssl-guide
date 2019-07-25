@@ -24,10 +24,7 @@ How is this installed?
 How to create/manage serial numbers?
 
 
-# configuration for when `ca` command uses this file to sign certificates
-# The only property that should be in this section. It points to the section containing the default `ca` config.
-# command line option: -name
-
+# Config file
 This is the basic structure of a config file. The ca section denotes options for when the `ca` command is invoked using this as a config.
 The only property this section should have is `default_ca` which points to the actual config section. Why it is done this way is unknown to me.
 
