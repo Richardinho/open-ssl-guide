@@ -24,16 +24,23 @@ How is this installed?
 How to create/manage serial numbers?
 
 ### mandatory options for default_CA section
-new_certs_dir
-database
-certificate
-private_key = $dir/private/my-ca-key.pem
-default_md
-serial
-policy
+* new_certs_dir
+* database
+* certificate
+* private_key
+* default_md
+* serial
+* policy
 
-# Options
-## new_certs_dir
+### non-mandatory options for defualt_CA section
+*
+*
+*
+
+
+
+## Options
+### new_certs_dir
 * *mandatory* : yes
 * *command line option* : -outdir
 
@@ -41,12 +48,12 @@ Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
 e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
 
-### Syntax
+#### Syntax
 ```
   new_certs_dir = <directory>
 ```
 
-### Examples
+#### Examples
 ```
   # dir is a variable defined elsewhere
   new_certs_dir  = $dir/newcerts
@@ -55,8 +62,22 @@ e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
 I don't know why the command line option is different!
 
 
-## Config file
-*mandatory* means that the options must be in the config file or specified on the command line.
+### database
+* *mandatory* : yes
+* *command line option* : n/a
+
+File to use as a database.
+
+#### Syntax
+```
+database = <file-path>
+```
+#### Examples
+````
+  # dir is a variable defined elsewhere
+  database = $dir/index.txt
+````
+Curiously, there is not command line option for database.
 
 ```
 # configuration for when `ca` command uses this file to sign certificates
@@ -83,9 +104,6 @@ database_file = $dir/database/index.txt
 # The certificate will be written to this directory using a filename of the serial number with .pem attached
 new_certs_dir = <directory>
 
-# File to use as a database.
-# command line option: curiously there isn't one!
-database = <file-path>
 
 # The CA certificate. Not (I think) where certificates are created (new_certs_dir).
 # command line option: -cert
