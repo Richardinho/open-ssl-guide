@@ -32,7 +32,7 @@ How to create/manage serial numbers?
 * serial
 * policy
 
-### non-mandatory options for defualt_CA section
+### non-mandatory options for default_CA section
 *
 *
 *
@@ -61,6 +61,7 @@ e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
 
 I don't know why the command line option is different!
 
+---
 
 ### database
 * *mandatory* : yes
@@ -73,10 +74,10 @@ File to use as a database.
 database = <file-path>
 ```
 #### Examples
-````
+```
   # dir is a variable defined elsewhere
   database = $dir/index.txt
-````
+```
 Curiously, there is not command line option for database.
 
 ---
@@ -89,7 +90,6 @@ The CA certificate. Not (I think) where certificates are created (new_certs_dir)
 
 #### Syntax
 ```
-  xxxxx
   certificate = <file-path>
 ```
 
@@ -112,6 +112,7 @@ private_key = <file-path>
 File containing CA private key
 
 #### Syntax
+
 ```
   private_key = <file-path>
 ```
@@ -157,7 +158,7 @@ File containing next number (in hex) to use as a serial number. (Get exact forma
   # dir is a variable defined elsewhere
   serial = $dir/serial
 ```
-
+---
 
 ### policy 
 * *mandatory* : yes
