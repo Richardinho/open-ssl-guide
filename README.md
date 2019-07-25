@@ -95,14 +95,9 @@ The CA certificate. Not (I think) where certificates are created (new_certs_dir)
 
 #### Examples
 ```
-  #  dir is a variable defined elsewhere
+  # dir is a variable defined elsewhere
   certificate = $dir/cacert.pem
 ```
-
-# File containing CA private key
-# command line option: -keyfile
-private_key = <file-path>
-
 ---
 
 ### private_key 
