@@ -399,123 +399,100 @@ I'll discuss these options below.
 
 ### crl_extensions 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  `-crlexts`
 
-xxxxxx
+Points to section containing CRL extensions. I don't think this is used as much as x509 extensions(?).
 
 #### Syntax
 ```
-  xxxxx
+  crl_extensions = <section-name>
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### preserve 
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  `-preserveDN`
 
-xxxxxx
+According to the documents: *Normally the DN order of a certificate is the same as the order of the fields in the relevant policy section. When this option is set the order is the same as the request. This is largely for compatibility with the older IE enrollment control which would only accept certificates if their DNs match the order of the request. This is not needed for Xenroll.*
 
 #### Syntax
-```
-  xxxxx
-```
+The documents do not say what the type of this value is!
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### email_in_dn
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  `-noemailDN`
 
-xxxxxx
+if *no*, email will be removed from certificate.
+The default is just to allow.
 
 #### Syntax
 ```
-  xxxxx
+  email_in_dn = no
 ```
 
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### msie_hack
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  `-msie_hack`
 
-xxxxxx
+Legacy option for dealing with old versions of IE.
 
-#### Syntax
-```
-  xxxxx
-```
-
-#### Examples
-```
-  xxxxx
-```
 ---
 
 ### name_opt
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
-xxxxxx
+Determine how certificate details are displayed to user when requesting signing confirmation.
 
 #### Syntax
 ```
-  xxxxx
+  name_opt = <name-option> [, <name-option>]
+
+  <name-option> : See documentation
 ```
 
 #### Examples
 ```
-  xxxxx
+  name_opt =  ca_default
 ```
 ---
 
 ### cert_opt
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
-xxxxxx
+Determine how certificate details are displayed to user when requesting signing confirmation.
 
 #### Syntax
 ```
-  xxxxx
+  cert_opt = <name-option> [, <name-option>]
 ```
 
 #### Examples
 ```
-  xxxxx
+  cert_opt = ca_default
+
+  <name-option> : See documentation
 ```
 --- 
 
 ### copy_extensions
 * *mandatory* : no
-* *command line option* :  xxxxx
+* *command line option* :  n/a
 
-xxxxxx
+According to documentation: *Determines how extensions in certificate requests should be handled. If set to none or this option is not present then extensions are ignored and not copied to the certificate. If set to copy then any extensions present in the request that are not already present are copied to the certificate. If set to copyall then all extensions in the request are copied to the certificate: if the extension is already present in the certificate it is deleted first. See the WARNINGS section before using this option.
+
+The main use of this option is to allow a certificate request to supply values for certain extensions such as subjectAltName.*
 
 #### Syntax
 ```
-  xxxxx
+  copy_extensions = none | copy | copyall
 ```
-
-#### Examples
-```
-  xxxxx
-```
-
-
 
 
 ### xxxxxxx 
