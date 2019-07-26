@@ -375,7 +375,25 @@ According to documents: *The section of the configuration file containing certif
 #### Syntax
 ```
   x509_extensions = <section-name>
+
 ```
+
+#### Examples
+
+```
+
+  x509_extensions = foo
+
+  # later in document
+
+  [foo]
+  basicConstraints        = critical,CA:true
+  keyUsage                = critical,keyCertSign,cRLSign
+  subjectKeyIdentifier    = hash
+
+```
+
+I'll discuss these options below.
 
 ---
 
