@@ -504,6 +504,45 @@ According to documentation: *Determines how extensions in certificate requests s
   copy_extensions = none | copy | copyall
 ```
 
+## Configuration file for req command
+```
+
+[req]
+input_password
+output_password
+default_bits
+default_keyfile
+oid_file
+oid_section = oid-section
+RANDFILE
+encrypt_key
+default_md
+string_mask
+req_extensions = req-extensions
+x509_extensions = x509-sections
+prompt
+utf8
+attributes = attributes
+distinguished_name = distinguished-name
+
+[oid-section]
+  ...
+
+[req-extensions]
+ ...
+
+[x509-sections]
+  ...
+
+[attributes]
+  ...
+
+[distinguished-name]
+  ...
+
+
+```
+
 
 ### xxxxxxx 
 * *mandatory* : xxxx
