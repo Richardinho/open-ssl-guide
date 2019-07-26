@@ -485,9 +485,7 @@ Determine how certificate details are displayed to user when requesting signing 
 * *mandatory* : no
 * *command line option* :  n/a
 
-According to documentation: *Determines how extensions in certificate requests should be handled. If set to none or this option is not present then extensions are ignored and not copied to the certificate. If set to copy then any extensions present in the request that are not already present are copied to the certificate. If set to copyall then all extensions in the request are copied to the certificate: if the extension is already present in the certificate it is deleted first. See the WARNINGS section before using this option.
-
-The main use of this option is to allow a certificate request to supply values for certain extensions such as subjectAltName.*
+According to documentation: *Determines how extensions in certificate requests should be handled. If set to none or this option is not present then extensions are ignored and not copied to the certificate. If set to copy then any extensions present in the request that are not already present are copied to the certificate. If set to copyall then all extensions in the request are copied to the certificate: if the extension is already present in the certificate it is deleted first. See the WARNINGS section before using this option. The main use of this option is to allow a certificate request to supply values for certain extensions such as subjectAltName.*
 
 #### Syntax
 ```
