@@ -91,6 +91,7 @@ Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
 e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
 
+[link text](#cookbook)
 #### Syntax
 ```
   new_certs_dir = <directory>
@@ -909,3 +910,4 @@ xxxxxx
 ```
 ---
 
+<a name="cookbook">cookbook</a>
