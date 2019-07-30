@@ -19,9 +19,14 @@ A certificate is created by a CA (Certificate Authority) from a CSR.
 
 
 Questions:
-When would a client need a certificate?
-How is this installed?
-How to create/manage serial numbers?
+* When would a client need a certificate?
+* How is this installed?
+* Is there a way to get Firefox to accept self signed root certificates? 
+* What is the difference between x509 v1 and v3?
+* How are extensions copied from parent to child certificates?
+
+# Managing serial numbers
+
 
 
 # Config file
@@ -179,11 +184,12 @@ The message digest to use
 * *mandatory* : yes
 * *command line option* :  n/a
 
-File containing the next number (in hex) to use as a serial number. (Get exact format)
-There seems to be some confusion over the creation of serial numbers. [this tutorial](https://www.phildev.net/ssl/creating_ca.html) suggests use of the `-create_serial` flag, but this doesn't seem to be documented.
-It is documented in the [openbsd documents](https://man.openbsd.org/openssl.1)
-Other sources suggest just putting a number (e.g. 01) into the serial file.
+File containing the next number (in hex) to use as a serial number.
+This file can be created with the following command:
 
+```
+openssl rand -hex 16  > db/serial
+```
 #### Syntax
 ```
   serial = <file-path>
@@ -504,7 +510,59 @@ According to documentation: *Determines how extensions in certificate requests s
   copy_extensions = none | copy | copyall
 ```
 
+## req command
+
+The req command is described in the documentation as a "certificate request and certificate generating utility". Close inspection of the the documentation show that several distinct actions can be carried out using this command by specifiying different command line flags.
+Here are the command line options grouped according to their function. This grouping is not in the documentation but is my interpretation.
+#### Actions
+-verify : verifies the signature on the request
+-new : generates a new certificate request
+-newkey : creates a new certificate request and a new private key so you only need one command instead of two.
+-x509 : outputs a self-signed certificate instead of a certificate request
+
+#### debugging
+-text : prints out certificate request in text form
+-subject : prints out request subject
+-pubkey : outputs the public key
+-modulus : prints out modulus of the public key
+#### configuration
+
+-inform : specifies the input format (DER | PEM)
+-outform
+-in : input file name for request. I think this means that you can use an existing request as the basis for the new one?
+-passin
+-out
+-passout
+-noout
+-subj
+-rand
+-pkeyopt
+-key : file to read private key from
+-keyform
+-keyout : filename to write newly created private key to. Presumably this only works when you use the -newkey option?
+-nodes : if a private key is created, it will not be encrypted.
+-[digest]
+-config
+-multivalue-rdn
+-days
+-set_serial
+-extensions
+-reqexts
+-utf8
+-nameopt
+-reqopt
+-asn1-kludge
+-no-asn1-kludge
+-newhdr
+-batch
+-verbose
+-engine
+-keygen_engine_id
+
+#### input files
+
 ## Configuration file for req command
+
 ```
 
 [req]
@@ -559,3 +617,295 @@ xxxxxx
 ```
   xxxxx
 ```
+---
+
+input_password = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+
+output_password = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+
+default_bits = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+default_keyfile = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+oid_file = ..
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+oid_section = oid-section
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+RANDFILE = ..
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+encrypt_key = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+default_md = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+string_mask = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+req_extensions = req-extensions
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+x509_extensions = x509-sections
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+prompt = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+utf8 = ...
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+attributes = attributes
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
+distinguished_name = distinguished-name
+### xxxxxxx 
+* *mandatory* : xxxx
+* *command line option* :  xxxxx
+
+xxxxxx
+
+#### Syntax
+```
+  xxxxx
+```
+
+#### Examples
+```
+  xxxxx
+```
+---
+
