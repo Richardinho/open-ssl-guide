@@ -1,4 +1,4 @@
-#OpenSSL Usage
+# OpenSSL Usage
 
 I personally find the documentation for OpenSSL to be deeply unsatisfactory, particularly around the config file. In this document, I want to create a guide for usage of OpenSSL, at least as it applies to my usage.
 
@@ -34,6 +34,7 @@ Questions:
 # Config file
 This is the basic structure of a config file. The ca section denotes options for when the `ca` command is invoked using this as a config.
 The only property this section should have is `default_ca` which points to the actual config section. Why it is done this way is unknown to me.
+Also supported is the `[default]` section which does not appear to be documented anywhere that I can find.
 
 ```
 [ ca ]
