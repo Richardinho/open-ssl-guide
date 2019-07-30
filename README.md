@@ -23,10 +23,7 @@ Questions:
 * How is this installed?
 * Is there a way to get Firefox to accept self signed root certificates? 
 * What is the difference between x509 v1 and v3?
-* How are extensions copied from parent to child certificates?
-
-# Managing serial numbers
-
+* investigate different ways of applying extensions and the consequence of these
 
 
 # Config file
@@ -190,7 +187,7 @@ This file can be created with the following command:
 ```
 openssl rand -hex 16  > db/serial
 ```
-The [ssl cookbook](#ssl-cookbook) recommends this. I am not sure if it has to be in the database folder?d
+The [OpenSSL Cookbook](#ssl-cookbook) recommends this. I am not sure if it has to be in the database folder?
 
 #### Syntax
 ```
@@ -395,25 +392,24 @@ According to documents: *The section of the configuration file containing certif
 #### Syntax
 ```
   x509_extensions = <section-name>
-
 ```
 
 #### Examples
 
 ```
 
-  x509_extensions = foo
+  x509_extensions = extensions 
 
   # later in document
 
-  [foo]
+  [extensions]
   basicConstraints        = critical,CA:true
   keyUsage                = critical,keyCertSign,cRLSign
   subjectKeyIdentifier    = hash
 
 ```
 
-I'll discuss these options below.
+There are different ways of applying these extensions to a certificate. Apart from this configuration option and the aforementioned flags, extensions can also be copied over from the certificate request to the certificate itself.
 
 ---
 
