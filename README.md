@@ -91,7 +91,6 @@ Specifies the directory where new certificates will be placed.
 The generated certificate will be written to this directory with a filename consisting of the serial number and a suffix of `.pem`.
 e.g. `my-ca-directory/newcerts/654.pem` (check this is so)
 
-[link text](#cookbook)
 #### Syntax
 ```
   new_certs_dir = <directory>
@@ -191,6 +190,8 @@ This file can be created with the following command:
 ```
 openssl rand -hex 16  > db/serial
 ```
+The [ssl cookbook](#ssl-cookbook) recommends this. I am not sure if it has to be in the database folder?d
+
 #### Syntax
 ```
   serial = <file-path>
@@ -910,4 +911,4 @@ xxxxxx
 ```
 ---
 
-<a name="cookbook">cookbook</a>
+* <a name="ssl-cookbook"></a> [OpenSSL Cookbook](https://www.feistyduck.com/library/openssl-cookbook/online/)
