@@ -24,6 +24,10 @@ Questions:
 * Is there a way to get Firefox to accept self signed root certificates? 
 * What is the difference between x509 v1 and v3?
 * investigate different ways of applying extensions and the consequence of these
+* Is the duration of the certificate mandatory or not?
+* how to create a RANDFILE. Is this useful?
+* Why the certificate option and the -cert flag? how is this different from the -out flag?
+* How does the serial number get incremented?
 
 
 # Config file
@@ -907,4 +911,7 @@ xxxxxx
 ```
 ---
 
+## References
 * <a name="ssl-cookbook"></a> [OpenSSL Cookbook](https://www.feistyduck.com/library/openssl-cookbook/online/)
+* <a name="openssl-docs"></a> [OpenSSL Documents](https://www.openssl.org/docs/man1.0.2/man1/openssl.html)
+* <a name="bsd-docs"></a> [OpenBSD OpenSSL Documents](https://man.openbsd.org/openssl.1)
