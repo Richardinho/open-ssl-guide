@@ -28,6 +28,7 @@ Questions:
 * how to create a RANDFILE. Is this useful?
 * Why the certificate option and the -cert flag? how is this different from the -out flag?
 * How does the serial number get incremented?
+* Why does the ca command output two identical certificates with different names?
 
 
 # Config file
